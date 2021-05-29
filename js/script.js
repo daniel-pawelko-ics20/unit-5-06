@@ -7,7 +7,8 @@
 "use strict"
 
 
-// Defining function that actives when user presses "Check" Button
+
+// Defining function that actives when user presses "calculate" Button
 function userInputClick() {
   // Store input/requirements in variables
   const first = parseInt(document.getElementById("number1-entered").value)
@@ -15,10 +16,21 @@ function userInputClick() {
   let counter = 0;
   let final = 0;
 
-  // Performs calculation
-  while (counter != second) {
-    final += first
-    counter++
+  // Performs calculation and output
+  if (second < 0) {
+    while (counter != second) {
+      final += first
+      counter--
+    }
+    final = final-final-final
+    document.getElementById('output').innerHTML = "Mupltiplicaiton: " + first + "x" + second + "=" + final 
+    console.log(final)
+  } else {
+    while (counter != second) {
+      final += first
+      counter++
+    }
+    document.getElementById('output').innerHTML = "Mupltiplicaiton: " + first + "x" + second + "=" + final 
     console.log(final)
   }
 }
